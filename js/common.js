@@ -43,3 +43,17 @@ $(function() {
     });
 
 });
+
+$(document).ready(function(){
+    $(window).bind('scroll',function(e){
+        parallaxScroll();
+    });
+
+    function parallaxScroll(){
+        var scrolledY = $(window).scrollTop();
+        $('body').css('background-position','center -'+((scrolledY*0.2))+'px');
+        $('.parallax-bg1').css('top','-'+((scrolledY*0.5))+'px');
+        $('.parallax-bg2').css('top','-'+((scrolledY*0.8))+'px');
+    }
+
+});
